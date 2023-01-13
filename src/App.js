@@ -93,7 +93,7 @@ function App() {
   function endGame() {
     if (dice.every((die) => die.value === dice[0].value && die.isHeld === true)) {
       setTenzies(true);
-      swal("祝贺你，安妮，你赢得了一张晚餐的优惠券。");
+      swal("Congratulations!");
       setRecordTime(gameTime - counter);
       localStorage.setItem("recordTime", recordTime);
     }
@@ -118,7 +118,7 @@ function App() {
       setTimeout(() => setCounter(counter - 1), 2000);
     }
     if (counter === 0) {
-      swal("游戏结束再试");
+      swal("Try Again");
     }
   }, [counter]);
 
@@ -126,7 +126,7 @@ function App() {
 
   function showInfo() {
     swal(
-      "滚动直到所有的骰子都一样。点击每个骰子，在两次滚动之间将其冻结在当前值。如果你在规定的时间内匹配所有的数字，你就会赢得奖品!"
+      "Roll until all dice are the same. Click on each die to freeze it at its current value between rolls. If you match all the numbers in the allotted time, you win!"
     );
   }
 
